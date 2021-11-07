@@ -51,13 +51,15 @@ def hack():
         has='Hashkey '+str(i)+' : '+dict[i]+'\n'
         Dlbl4.insert(END,has)
             
-m=Tk()
-m.title("Caser Cypher")
-m.geometry('1000x1000')
-lbl=Label(m,text='Caeser Cypher',font='Times 32 bold')
-lbl.place(x=100,y=50)
-canvas = Canvas(m, width = 400, height = 300)  
-canvas.place(x=400,y=10) 
+root=Tk()
+root.title("Caser Cypher")
+root.geometry('1000x1000')
+m=Frame(root,height=800,width=1000,bg='purple')
+m.pack()
+lbl=Label(m,text='Caeser Cypher',font='Times 32 bold',bg='purple')
+lbl.place(x=150,y=50)
+canvas = Canvas(m, width = 400, height = 300,bg= 'purple')  
+canvas.place(x=600,y=10) 
 img = ImageTk.PhotoImage(Image.open("cypherimage.png"))  
 canvas.create_image(20, 20, anchor=NW, image=img)      
 
@@ -93,16 +95,16 @@ Dframe.place(x=500,y=0)
 Dlbl1=Label(Dframe,text='Decryption', font='Times 24 bold',bg='yellow')
 Dlbl1.place(x=150,y=50)
 #text entry
-Dlbl2=Label(Dframe,text='Enter Cypher Text :', font='Times 12')
+Dlbl2=Label(Dframe,text='Enter Cypher Text :', font='Times 12',bg='yellow')
 Dlbl2.place(x=100,y=100)
 de1= Entry(Dframe)
-de1.place(x=200,y=100)
+de1.place(x=250,y=100)
 #letters
 LETTERS = 'Letters : ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-Dlbl3=Label(Dframe,text=LETTERS, font='Times 12')
-Dlbl3.place(x=150,y=150)
+Dlbl3=Label(Dframe,text=LETTERS, font='Times 12',bg='yellow')
+Dlbl3.place(x=75,y=150)
 #display result
-Dlbl4=Text(Dframe,height=20,width=30)
+Dlbl4=Text(Dframe,height=10,width=30)
 Dlbl4.place(x=125,y=200)
 #Button
 button=Button(Dframe,text='Decrypt',bg='red',command = hack )
@@ -110,4 +112,4 @@ button.place(x=100,y=400)
 button=Button(Dframe,text='Reset',bg='red',command = clear1)
 button.place(x=400,y=400)
 
-m.mainloop()
+root.mainloop()
